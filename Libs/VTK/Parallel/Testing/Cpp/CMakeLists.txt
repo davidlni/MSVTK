@@ -19,3 +19,4 @@ target_link_libraries(msv${KIT}CxxTests ${LIBRARY_NAME})
 #
 simple_test_with_data( msvVTKFileSeriesReaderTest1 )
 simple_test_with_data( msvVTKDataFileSeriesReaderTest1 )
+
