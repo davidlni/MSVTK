@@ -290,7 +290,8 @@ if(CMAKE_COMPILER_IS_GNUCXX)
   endif()
 
   set(MSVTK_C_FLAGS "${cflags} ${MSVTK_C_FLAGS}")
-  set(MSVTK_CXX_FLAGS "${cflags} -Woverloaded-virtual -Wold-style-cast -Wstrict-null-sentinel -Wsign-promo ${MSVTK_CXX_FLAGS}")
+#   set(MSVTK_CXX_FLAGS "${cflags} -Woverloaded-virtual -Wold-style-cast -Wstrict-null-sentinel -Wsign-promo ${MSVTK_CXX_FLAGS}")
+  set(MSVTK_CXX_FLAGS "${cflags} -Woverloaded-virtual -Wstrict-null-sentinel -Wsign-promo ${MSVTK_CXX_FLAGS}")
 endif()
 
 if(MSVC)
@@ -351,10 +352,13 @@ option(MSVTK_USE_KWSTYLE     "Enable sourcecode-based style tests." OFF)
 #
 set(MSVTK_PLUGINS_SUBDIRS )
 set(MSVTK_APPLICATIONS_SUBDIRS
-  ECG
-  HAI
+#   ECG
+#   HAI
+  MSI
+  
 )
 
+<<<<<<< HEAD
 option(MSVTK_APP_ECG "ECG application to demonstrate vtkButtons" ON)
 option(MSVTK_APP_VTKButtons "vtkButtons application to demonstrate vtkButtons" ON)
 list(APPEND MSVTK_APPLICATIONS_SUBDIRS ECG)
@@ -362,6 +366,11 @@ list(APPEND MSVTK_APPLICATIONS_SUBDIRS VTKButtons)
 
 set(MSVTK_MAIN_PROJECT_APPLICATION_NAME ECG)
 
+=======
+# option(MSVTK_APP_ECG "ECG application to demonstrate vtkPipeline architecture and vtkButtons" ON)
+# option(MSVTK_APP_HAI "HAI application to demonstrate vtkPipeline architecture and composite data set" ON)
+option(MSVTK_APP_MSI "CAF application to demonstrate the multiscale and simulation capabilities" ON)
+>>>>>>> Added fluid simulation demo files in the Application folder
 
 #-----------------------------------------------------------------------------
 # Prerequisites
