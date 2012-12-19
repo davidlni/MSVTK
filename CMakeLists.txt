@@ -352,13 +352,11 @@ option(MSVTK_USE_KWSTYLE     "Enable sourcecode-based style tests." OFF)
 #
 set(MSVTK_PLUGINS_SUBDIRS )
 set(MSVTK_APPLICATIONS_SUBDIRS
-#   ECG
-#   HAI
-  MSI
-  
+  ECG
+  HAI
+  FFS  
 )
 
-<<<<<<< HEAD
 option(MSVTK_APP_ECG "ECG application to demonstrate vtkButtons" ON)
 option(MSVTK_APP_VTKButtons "vtkButtons application to demonstrate vtkButtons" ON)
 list(APPEND MSVTK_APPLICATIONS_SUBDIRS ECG)
@@ -366,11 +364,10 @@ list(APPEND MSVTK_APPLICATIONS_SUBDIRS VTKButtons)
 
 set(MSVTK_MAIN_PROJECT_APPLICATION_NAME ECG)
 
-=======
-# option(MSVTK_APP_ECG "ECG application to demonstrate vtkPipeline architecture and vtkButtons" ON)
-# option(MSVTK_APP_HAI "HAI application to demonstrate vtkPipeline architecture and composite data set" ON)
-option(MSVTK_APP_MSI "CAF application to demonstrate the multiscale and simulation capabilities" ON)
->>>>>>> Added fluid simulation demo files in the Application folder
+option(MSVTK_APP_ECG "ECG application to demonstrate vtkPipeline architecture and vtkButtons" ON)
+option(MSVTK_APP_HAI "HAI application to demonstrate vtkPipeline architecture and composite data set" ON)
+option(MSVTK_APP_FFS "FFS application to demonstrate the multiscale and fluid flow simulation capabilities" ON)
+
 
 #-----------------------------------------------------------------------------
 # Prerequisites
@@ -473,7 +470,7 @@ endforeach()
 foreach(app ${MSVTK_APPLICATIONS_SUBDIRS})
   if(MSVTK_APP_${app})
     add_subdirectory(Applications/${app})
-  endif()
+  endif()            
 endforeach()
 
 #-----------------------------------------------------------------------------
