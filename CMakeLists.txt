@@ -351,23 +351,16 @@ option(MSVTK_USE_KWSTYLE     "Enable sourcecode-based style tests." OFF)
 # Will contain a list of sub-directory without option ON or OFF
 #
 set(MSVTK_PLUGINS_SUBDIRS )
-set(MSVTK_APPLICATIONS_SUBDIRS
-  ECG
-  HAI
-  FFS  
-)
-
-option(MSVTK_APP_ECG "ECG application to demonstrate vtkButtons" ON)
-option(MSVTK_APP_VTKButtons "vtkButtons application to demonstrate vtkButtons" ON)
-list(APPEND MSVTK_APPLICATIONS_SUBDIRS ECG)
-list(APPEND MSVTK_APPLICATIONS_SUBDIRS VTKButtons)
-
-set(MSVTK_MAIN_PROJECT_APPLICATION_NAME ECG)
+set(MSVTK_APPLICATIONS_SUBDIRS )
 
 option(MSVTK_APP_ECG "ECG application to demonstrate vtkPipeline architecture and vtkButtons" ON)
-option(MSVTK_APP_HAI "HAI application to demonstrate vtkPipeline architecture and composite data set" ON)
-option(MSVTK_APP_FFS "FFS application to demonstrate the multiscale and fluid flow simulation capabilities" ON)
+option(MSVTK_APP_VTKButtons "vtkButtons application to demonstrate vtkButtons" ON)
+option(MSVTK_APP_FFS "FFS application to demonstrate fluid flow simulation capabilities in msvtk" ON)
+list(APPEND MSVTK_APPLICATIONS_SUBDIRS ECG)
+list(APPEND MSVTK_APPLICATIONS_SUBDIRS VTKButtons)
+list(APPEND MSVTK_APPLICATIONS_SUBDIRS FFS)
 
+set(MSVTK_MAIN_PROJECT_APPLICATION_NAME ECG)
 
 #-----------------------------------------------------------------------------
 # Prerequisites
@@ -380,7 +373,6 @@ endif()
 #-----------------------------------------------------------------------------
 # Superbuild script
 #
-
 if(MSVTK_SUPERBUILD)
   add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/CMake/SuperBuild")
   return()
